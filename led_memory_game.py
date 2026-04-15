@@ -4,8 +4,17 @@
 # Due: 04/28/26
 # Description: A program to handle memory game logic using led lights and a client-server model for processing user input.
 
+# Imports
 import random
+import time
+from gpiozero import LED
 
+# Assign led lights to GPIO pins
+r_led = LED(20)  # Red led; change GPIO pin as needed
+g_led = LED(21)  # Green led; change GPIO pin as needed
+y_led = LED(16)  # Yellow led; change GPIO pin as needed
+
+# MemGame: class to describe an instance of a game
 class MemGame:
     # __init__: Constructor to initialize memory game
     # Pre: Client has requested to play game
@@ -38,3 +47,25 @@ class MemGame:
     def reset_game(self):
         self.sequence = []
         self.client_sequence = []
+
+    # light_up: Method to light up a specific led color with a clear on/off rhythm
+    # Pre: Color chosen
+    # Post: Specified led lights up for 1 second, then stays off longer
+    def light_up(color):
+        on_time = 1.0
+        off_time = 0.8
+
+        if color == "red":
+            r_led.on()
+            time.sleep(on_time)
+            r_led.off()
+        elif color == "green":
+            g_led.on()
+            time.sleep(on_time)
+            g_led.off()
+        elif color == "yellow":
+            y_led.on()
+            time.sleep(on_time)
+            y_led.off()
+
+        time.sleep(off_time)
