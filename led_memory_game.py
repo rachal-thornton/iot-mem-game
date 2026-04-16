@@ -51,7 +51,7 @@ class MemGame:
     # light_up: Method to light up a specific led color with a clear on/off rhythm
     # Pre: Color chosen
     # Post: Specified led lights up for 1 second, then stays off longer
-    def light_up(color):
+    def light_up(self, color):
         on_time = 1.0
         off_time = 0.8
 
