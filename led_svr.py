@@ -16,8 +16,8 @@ from gpiozero import LED
 import led_memory_game
 
 # Assign server host and port
-HOST = '199.17.161.147' # Listening IP
-PORT = 3147             # Listening port
+# HOST =        # Listening IP
+# PORT =        # Listening port
 
 # Create socket
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
