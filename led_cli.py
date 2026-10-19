@@ -11,8 +11,8 @@ import socket
 import sys
 
 # Assign server host and port
-host = '199.17.161.147' # Server IP
-port = 3147             # Server port
+# host =                # Server IP
+# port =                # Server port
 
 # Start of client-side logic
 while True:
